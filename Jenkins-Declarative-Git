@@ -6,7 +6,7 @@ pipeline{
     stages{
         stage(){
             steps{
-                git 'https://github.com/ybsgit/JavaHelloWorld'
+                git 'https://github.com/ybsgit/myweb'
             }
         }
         stage("maven build"){
