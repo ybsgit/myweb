@@ -16,11 +16,13 @@ pipeline{
             }
         }
         stage("deploy-dev"){
+            steps {
             sshagent(['tomcat-new']) {
            sh '''
                 scp -o StrictHostKeyChecking=no target/myweb.war root@10.182.0.36:/var/lib/tomcat9/webapps/
                 ssh -o StrictHostKeyChecking=no root@10.182.0.36 service tomcat9 restart 
            '''
+            }
 }
         }
     }
