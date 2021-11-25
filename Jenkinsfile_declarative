@@ -5,6 +5,7 @@ pipeline{
             steps{
               git 'https://github.com/ybsgit/myweb'
             }
+         }
          stage("Maven Build"){
           steps{
             sh "mvn clean package"
